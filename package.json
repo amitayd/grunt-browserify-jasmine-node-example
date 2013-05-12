@@ -1,0 +1,48 @@
+{
+  "name": "jsml",
+  "description": "Javascript machine learning library",
+  "version": "0.1.0",
+  "homepage": "https://github.com/amitay/jsml",
+  "author": {
+    "name": "Amitay Dobo",
+    "email": "amitayd@gmail.com",
+    "url": "http://doboism.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amitay/jsml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amitay/jsml/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/amitay/jsml/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "src/jsml",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-qunit": "~0.2.1",
+    "grunt-contrib-jasmine": "~0.4.2",
+    "grunt-browserify": "~1.0.0",
+    "browserify": "~2.13.3",
+    "grunt-browserify2": "~0.1.7",
+    "grunt-jasmine-node": "~0.1.0",
+    "jasmine-node": "~1.7.0",
+    "grunt-shell": "~0.2.2"
+  },
+  "keywords": []
+}

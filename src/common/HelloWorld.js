@@ -7,5 +7,5 @@ exports.hello = function hello() {
 };
 
 exports.helloUnderscore = function helloUnderscore() {
-    return _.escape('hello & hi')
+    return _.escape('hello & hi');
 };

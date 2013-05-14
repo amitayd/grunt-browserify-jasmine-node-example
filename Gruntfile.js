@@ -12,18 +12,27 @@ module.exports = function (grunt) {
             '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
             ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
         // Task configuration.
-        jasmine : {
-            src : 'dist/app_bundle.js',
-            options : {
-                specs : 'dist/test_bundle.js',
-                vendor : ['libs/jquery-1.9.1.js', 'libs/underscore.js']
-            }
-        },
         watch: {
             all: {
                 files: ['src/**/*.*', 'test/**/*.*'],
-                tasks: ['browserify', 'jasmine', 'shell:jasmine_node']
+                tasks: ['default']
             },
+        },
+        shell: {
+            jasmine_node: {
+                command: 'jasmine-node test/spec/node/ test/spec/common/',
+                options: {
+                    stdout: true,
+                    stderr: true,
+                    failOnError: true,
+                }
+            }
+        },
+        jshint: {
+            all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+            options: {
+                jshintrc: '.jshintrc',
+            }
         },
         browserify: {
             main: {
@@ -43,12 +52,17 @@ module.exports = function (grunt) {
                 }
             },
         },
-        shell: {
-            jasmine_node: {
-                command: 'jasmine-node test/spec/node/ test/spec/common/',
-                options: {
-                    stdout: true,
-                    stderr: true,
+        jasmine : {
+            src : 'dist/app_bundle.js',
+            options : {
+                specs : 'dist/test_bundle.js',
+                vendor : ['libs/jquery-1.9.1.js', 'libs/underscore.js']
+            }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'dist/app_bundle_min.js': ['dist/app_bundle.js']
                 }
             }
         }
@@ -58,10 +72,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-browserify');
-    grunt.loadNpmTasks('grunt-jasmine-node');
     grunt.loadNpmTasks('grunt-shell');
-
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Default task.
-    grunt.registerTask('default', ['browserify', 'jasmine', 'shell:jasmine_node']);
+    grunt.registerTask('default', ['jshint', 'shell:jasmine_node', 'browserify', 'jasmine', 'uglify']);
 };

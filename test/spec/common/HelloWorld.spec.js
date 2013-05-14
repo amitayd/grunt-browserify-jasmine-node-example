@@ -1,7 +1,6 @@
 'use strict';
 
-var HelloWorld = require('../../../src/common/HelloWorld')
-
+var HelloWorld = require('../../../src/common/HelloWorld');
 
 describe("HelloWorld", function() {
     it("hello() should say hello when called", function() {
@@ -14,6 +13,3 @@ describe("HelloUnderscore", function() {
         expect(HelloWorld.helloUnderscore()).toEqual("hello &amp; hi");
     });
 });
-
-
-

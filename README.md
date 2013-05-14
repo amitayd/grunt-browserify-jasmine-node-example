@@ -1,4 +1,4 @@
-# grunt-browserify-jasmine-node-example
+# grunt-browserify-jasmine-node-example [![Build Status](https://travis-ci.org/amitayd/grunt-browserify-jasmine-node-example.png)](https://travis-ci.org/amitayd/grunt-browserify-jasmine-node-example)
 
 An example of how to set up a project for cross-developing for the browser and node.js.
 

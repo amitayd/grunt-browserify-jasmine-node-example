@@ -28,7 +28,7 @@
   "scripts": {
     "test": "grunt"
   },
-  "dependencies" : {
+  "dependencies": {
     "underscore": "~1.4"
   },
   "devDependencies": {
@@ -39,8 +39,12 @@
     "grunt-browserify": "~1.0.0",
     "jasmine-node": "~1.7.0",
     "grunt-shell": "~0.2.2",
-    "grunt-contrib-jasmine": "~0.4.2"
-
+    "grunt-contrib-jasmine": "~0.4.2",
+    "grunt-cli": "~0.1.8"
   },
-  "keywords": ["grunt", "jasmine", "browserify"]
+  "keywords": [
+    "grunt",
+    "jasmine",
+    "browserify"
+  ]
 }

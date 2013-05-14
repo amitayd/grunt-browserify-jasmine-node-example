@@ -75,7 +75,7 @@ A client could load it in javascript using:
         sampleApp.main();
 ```
 
-You can see the application running at [tests/AppRunner.html](tests/AppRunner.html)
+You can see the application running at [test/AppRunner.html](test/AppRunner.html)
 
 ### Notes
  * Couldn't get any of the jasmine-node grunt plugins to run properly with 2 directories, so using the shell instead

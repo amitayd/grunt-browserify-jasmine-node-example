@@ -67,9 +67,14 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
-            my_target: {
+            all: {
                 files: {
                     'dist/app_bundle_min.js': ['dist/app_bundle.js']
+                }
+            },
+            main: {
+                files: {
+                    'dist/app_bundle_main_min.js': ['dist/app_bundle_main.js']
                 }
             }
         }

@@ -36,10 +36,17 @@ module.exports = function (grunt) {
         },
         browserify: {
             main: {
+                src: ['./src/browser/App.js'],
+                dest: 'dist/app_bundle_main.js',
+                options: {
+                    alias: ["./src/browser/App.js:SampleApp"],
+                }
+            },
+            src: {
                 src: ['src/common/**/*.js', 'src/browser/**/*.js'],
                 dest: 'dist/app_bundle.js',
                 options: {
-                    alias: ["./src/browser/App.js:App"],
+                    alias: ["./src/browser/App.js:SampleApp"],
                     externalize: ['src/common/**/*.js', 'src/browser/**/*.js'],
                    
                 }

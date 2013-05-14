@@ -64,10 +64,23 @@ Tests can be run in 3 modes:
 
     Runs with the browserified code. Build the project and open the test bootstrap page with any browser, i.e. `firefox test/SpecRunner.html`
 
+### Running the "Application"
+
+One of the browserify targets creates a bundle just for the "src/browser/App" module (and its dependencies).
+
+The module is aliased as "SampleApp", so it can be loaded and run by an external html file.
+A client could load it in javascript using:
+```
+        var sampleApp = require('SampleApp');
+        sampleApp.main();
+```
+
+You can see the application running at [tests/AppRunner.html](tests/AppRunner.html)
 
 ### Notes
  * Couldn't get any of the jasmine-node grunt plugins to run properly with 2 directories, so using the shell instead
  * underscore.js is packaged from the npm package to the built app_bundle. Alternatives would be packaging it in a different bundle, but as a browserified file, or loading it as an external script file, and using its global variable. This is currently (AFAIK) not supported in browserify, but can be achieved through a hack to the code. This is currently commented out in HelloWorld.js
+ * Jquery is loaded as a window global and not as a module for require(). An alternative would be to use a jquery version which supports being exposed as a commonJS module, or using browserify-shim to wrap it so it could be used with a require().
 
 
 

@@ -1,5 +1,6 @@
 /* global $: false */
 
 exports.hello = function hello() {
-    return $('<div>hello</div>');
+    var element = $('<div id="hello">hello</div>');
+    return element;
 };

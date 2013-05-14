@@ -35,7 +35,9 @@
     "grunt": "~0.4.1",
     "grunt-browserify": "~1.0.0",
     "jasmine-node": "~1.7.0",
-    "grunt-shell": "~0.2.2"
+    "grunt-shell": "~0.2.2",
+    "grunt-jasmine-node": "~0.1.0"
+
   },
   "keywords": ["grunt", "jasmine", "browserify"]
 }

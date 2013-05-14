@@ -1,53 +1,80 @@
-# jsml
+# grunt-browserify-jasmine-node-example
 
-Javascript machine learning library
+An example of how to set up a project for cross-developing for the browser and node.js.
+
+The example is using jasmine on the browser and jasmine-node for unit testing, but similiar concepts apply for any testing framework which works both on the browser and node.
 
 ## Getting Started
-### On the server
-Install the module with: `npm install jsml`
 
-```javascript
-var jsml = require('jsml');
-jsml.awesome(); // "awesome"
+Install node.js, and grunt-cli and jasmine-node globally.
+
+```
+npm install -g grunt-cli
+npm install -g jasmine-node
 ```
 
-### In the browser
-Download the [production version][min] or the [development version][max].
-
-[min]: https://raw.github.com/amitay/jsml/master/dist/jsml.min.js
-[max]: https://raw.github.com/amitay/jsml/master/dist/jsml.js
-
-In your web page:
-
-```html
-<script src="dist/jsml.min.js"></script>
-<script>
-awesome(); // "awesome"
-</script>
+Clone/Download the repository, and from its directory, install the dependencies:
+```
+npm install
 ```
 
-In your code, you can attach jsml's methods to any object.
-
-```html
-<script>
-var exports = Bocoup.utils;
-</script>
-<script src="dist/jsml.min.js"></script>
-<script>
-Bocoup.utils.awesome(); // "awesome"
-</script>
+You are now ready to run the build and the tests:
+```
+# build one time
+grunt 
+# continously watch for changes and build when they occur
+grunt watch
 ```
 
 ## Documentation
-_(Coming soon)_
 
-## Examples
-_(Coming soon)_
+### Project structure
+```
+- src          : application code
+  - browser    : browser only code
+  - common     : both for node.js and browser
+  - node       : node.js only code
+- test
+  - specs      : jasmine test specs
+    - browser  : run with jasmine browser only
+    - common   : run with jasmine + jasmine-node
+    - node     : ruh with jasmine-node only
+- resources    : resource files
+- libs         : external libraries
+- dist         : build output
+GruntFile.js   : buld configuration
+
+
+```
+
+### Running tests
+
+Tests can be run in 3 modes:
+
+1. Jasmine-node:
+
+    The only tests that are using the source code directly (i.e. pre build). They are run as part of the main build, or you can run `grunt shell:jasmine_node`
+  
+2. Jasmine through automated PhantomJS browser
+ 
+    Runs with the browserified code, using a headless PhantomJS server, as part of the build, or by `grunt jasmine`
+    To run:
+
+3. Jasmine in the browser
+
+    Runs with the browserified code. Build the project and open the test bootstrap page with any browser, i.e. `firefox test/SpecRunner.html`
+
+
+### Notes
+ * Couldn't get any of the jasmine-node grunt plugins to run properly with 2 directories, so using the shell instead
+ * underscore.js is packaged from the npm package to the built app_bundle. Alternatives would be packaging it in a different bundle, but as a browserified file, or loading it as an external script file, and using its global variable. This is currently (AFAIK) not supported in browserify, but can be achieved through a hack to the code. This is currently commented out in HelloWorld.js
+
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
-_Also, please don't edit files in the "dist" subdirectory as they are generated via Grunt. You'll find source code in the "lib" subdirectory!_
+_Also, please don't edit files in the "dist" subdirectory as they are generated via Grunt._
 
 ## Release History
 _(Nothing yet)_

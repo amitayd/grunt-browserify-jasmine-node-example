@@ -4,6 +4,8 @@ An example of how to set up a project for cross-developing for the browser and n
 
 The example is using jasmine on the browser and jasmine-node for unit testing, but similiar concepts apply for any testing framework which works both on the browser and node.
 
+See further discussion at my [blog post](http://www.doboism.com/blog/2013/05/17/cross-developing-for-node-js-and-browsers-using-browserify/).
+
 ## Getting Started
 
 Install node.js, and grunt-cli and jasmine-node globally.

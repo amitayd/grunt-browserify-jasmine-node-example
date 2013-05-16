@@ -40,7 +40,8 @@ module.exports = function (grunt) {
                 dest: 'dist/app_bundle_main.js',
                 options: {
                     alias: ["./src/browser/App.js:SampleApp"],
-                }
+                    ignore: ['src/node/**/*.js'],
+                },
             },
             src: {
                 src: ['src/common/**/*.js', 'src/browser/**/*.js'],
@@ -48,14 +49,15 @@ module.exports = function (grunt) {
                 options: {
                     alias: ["./src/browser/App.js:SampleApp"],
                     externalize: ['src/common/**/*.js', 'src/browser/**/*.js'],
-                   
+                    ignore: ['src/node/**/*.js'],
                 }
             },
             test: {
                 src: ['test/spec/common/**/*.js', 'test/spec/browser/**/*.js'],
                 dest: 'dist/test_bundle.js',
                 options: {
-                    external: ['./src/**/*.js']
+                    external: ['./src/**/*.js'],
+                    ignore: ['./node_modules/underscore/underscore.js'],
                 }
             },
         },

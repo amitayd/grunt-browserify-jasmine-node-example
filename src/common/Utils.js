@@ -1,11 +1,20 @@
 /* global window: false */ 
 
-exports.requireOrGlobal = function (module, global) {
+function isBrowser() {
+    return typeof(window) !== 'undefined';
+}
 
-   if (typeof(window) !== 'undefined' && window[global]) {
+exports.isBrowser = isBrowser();
+
+exports.requireOrGlobal = function (module, global) {
+   if (isBrowser()) {
         return window[global];
     }
     else {
         return require(module);
     }
 };
+
+
+
+

@@ -1,5 +1,3 @@
-# Utils = require "./Utils"
-# _ = Utils.requireOrGlobal "underscore", "_"
 _ = require "underscore"
 
 exports.hello = -> "hello"

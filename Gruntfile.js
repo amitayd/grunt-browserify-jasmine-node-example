@@ -59,7 +59,6 @@ module.exports = function (grunt) {
                 dest: 'dist/test_bundle.js',
                 options: {
                     external: ['./src/**/*.js'],
-                    ignore: ['./node_modules/underscore/underscore.js'],
                     transform: ['coffeeify']
                 }
             },

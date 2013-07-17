@@ -41,7 +41,7 @@ module.exports = function (grunt) {
                 options: {
                     alias: ["./src/browser/App.coffee:SampleApp"],
                     ignore: ['src/node/**/*.coffee'],
-                    transform: ["coffeeify"]
+                    transform: ['coffeeify', 'envify', 'brfs']
                 },
             },
             src: {
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
                     alias: ["./src/browser/App.coffee:SampleApp"],
                     externalize: ['src/common/**/*.coffee', 'src/browser/**/*.coffee'],
                     ignore: ['src/node/**/*.coffee'],
-                    transform: ['coffeeify']
+                    transform: ['coffeeify', 'envify', 'brfs']
                 }
             },
             test: {
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                 dest: 'dist/test_bundle.js',
                 options: {
                     external: ['./src/**/*.js'],
-                    transform: ['coffeeify']
+                    transform: ['coffeeify', 'envify']
                 }
             },
         },

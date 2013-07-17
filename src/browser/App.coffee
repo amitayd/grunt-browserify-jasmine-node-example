@@ -1,3 +1,4 @@
+Config      = require './lib/Config.coffee'
 helloJquery = require './HelloJquery.coffee';
 helloWorld  = require '../common/HelloWorld.coffee';
 

@@ -42,7 +42,11 @@
     "grunt-contrib-jasmine": "~0.4.2",
     "grunt-cli": "~0.1.8",
 
-    "coffeeify": "~0.5.*"
+    "coffeeify": "~0.5.1",
+    "brfs": "~0.0.6",
+    "envify": "~0.0.1",
+    "uglifyify": "~0.0.1",
+    "yamljs": "~0.1.4"
   },
   "keywords": [
     "grunt",

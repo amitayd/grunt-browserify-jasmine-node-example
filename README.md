@@ -1,12 +1,11 @@
-# grunt-browserify-jasmine-node-example [![Build Status](https://travis-ci.org/amitayd/grunt-browserify-jasmine-node-example.png)](https://travis-ci.org/amitayd/grunt-browserify-jasmine-node-example)
+# cross-js-template
+An example of how to set up a project for cross-developing for the browser and node.js.
 
 Forked from [amitayd](https://github.com/amitayd/grunt-browserify-jasmine-node-example) and modified with the following:
 
 - CoffeeScript instead of vanilla JS
 - Environment based configuration (envify)
 - HTML templates with Handlebars (hbsfy)
-
-An example of how to set up a project for cross-developing for the browser and node.js.
 
 The example is using jasmine on the browser and jasmine-node for unit testing, but similiar concepts apply for any testing framework which works both on the browser and node.
 
@@ -48,7 +47,7 @@ grunt watch
     - common   : run with jasmine + jasmine-node
     - node     : ruh with jasmine-node only
 - resources    : resource files
-- libs         : external libraries
+- vendor       : external libraries
 - dist         : build output
 GruntFile.js   : buld configuration
 

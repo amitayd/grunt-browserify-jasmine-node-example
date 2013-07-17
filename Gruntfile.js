@@ -36,20 +36,22 @@ module.exports = function (grunt) {
         },
         browserify: {
             main: {
-                src: ['./src/browser/App.js'],
+                src: ['./src/browser/App.coffee'],
                 dest: 'dist/app_bundle_main.js',
                 options: {
-                    alias: ["./src/browser/App.js:SampleApp"],
-                    ignore: ['src/node/**/*.js'],
+                    alias: ["./src/browser/App.coffee:SampleApp"],
+                    ignore: ['src/node/**/*.coffee'],
+                    transform: ["coffeeify"]
                 },
             },
             src: {
-                src: ['src/common/**/*.js', 'src/browser/**/*.js'],
+                src: ['src/common/**/*.coffee', 'src/browser/**/*.coffee'],
                 dest: 'dist/app_bundle.js',
                 options: {
-                    alias: ["./src/browser/App.js:SampleApp"],
-                    externalize: ['src/common/**/*.js', 'src/browser/**/*.js'],
-                    ignore: ['src/node/**/*.js'],
+                    alias: ["./src/browser/App.coffee:SampleApp"],
+                    externalize: ['src/common/**/*.coffee', 'src/browser/**/*.coffee'],
+                    ignore: ['src/node/**/*.coffee'],
+                    transform: ['coffeeify']
                 }
             },
             test: {
@@ -58,6 +60,7 @@ module.exports = function (grunt) {
                 options: {
                     external: ['./src/**/*.js'],
                     ignore: ['./node_modules/underscore/underscore.js'],
+                    transform: ['coffeeify']
                 }
             },
         },

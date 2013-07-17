@@ -1,6 +1,6 @@
 'use strict';
 
-var ReaderWriter = require('../../../src/common/PersistentReaderWriter');
+var ReaderWriter = require('../../../src/common/PersistentReaderWriter.coffee');
 
 /* Note: The test would use whichever implementation is given,
 according to the environment the test is being run at (node/browser) */

@@ -2,3 +2,4 @@
 /.idea
 dist
 resources/someKey.txt
+.DS_Store

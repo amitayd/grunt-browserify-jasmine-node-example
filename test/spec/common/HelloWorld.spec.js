@@ -1,6 +1,6 @@
 'use strict';
 
-var HelloWorld = require('../../../src/common/HelloWorld');
+var HelloWorld = require('../../../src/common/HelloWorld.coffee');
 
 describe("HelloWorld", function() {
     it("hello() should say hello when called", function() {

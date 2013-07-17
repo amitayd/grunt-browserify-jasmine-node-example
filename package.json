@@ -40,7 +40,9 @@
     "jasmine-node": "~1.7.0",
     "grunt-shell": "~0.2.2",
     "grunt-contrib-jasmine": "~0.4.2",
-    "grunt-cli": "~0.1.8"
+    "grunt-cli": "~0.1.8",
+
+    "coffeeify": "~0.5.*"
   },
   "keywords": [
     "grunt",

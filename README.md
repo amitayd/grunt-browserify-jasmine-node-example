@@ -1,5 +1,11 @@
 # grunt-browserify-jasmine-node-example [![Build Status](https://travis-ci.org/amitayd/grunt-browserify-jasmine-node-example.png)](https://travis-ci.org/amitayd/grunt-browserify-jasmine-node-example)
 
+Forked from [amitayd](https://github.com/amitayd/grunt-browserify-jasmine-node-example) and modified with the following:
+
+- CoffeeScript instead of vanilla JS
+- Environment based configuration (envify)
+- HTML templates with Handlebars (hbsfy)
+
 An example of how to set up a project for cross-developing for the browser and node.js.
 
 The example is using jasmine on the browser and jasmine-node for unit testing, but similiar concepts apply for any testing framework which works both on the browser and node.
@@ -23,7 +29,7 @@ npm install
 You are now ready to run the build and the tests:
 ```
 # build one time
-grunt 
+grunt
 # continously watch for changes and build when they occur
 grunt watch
 ```
@@ -56,9 +62,9 @@ Tests can be run in 3 modes:
 1. Jasmine-node:
 
     The only tests that are using the source code directly (i.e. pre build). They are run as part of the main build, or you can run `grunt shell:jasmine_node`
-  
+
 2. Jasmine through automated PhantomJS browser
- 
+
     Runs with the browserified code, using a headless PhantomJS server, as part of the build, or by `grunt jasmine`
     To run:
 
@@ -95,5 +101,5 @@ _Also, please don't edit files in the "dist" subdirectory as they are generated 
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2013 Amitay Dobo  
+Copyright (c) 2013 Amitay Dobo
 Licensed under the MIT license.

@@ -1,5 +1,5 @@
-Config      = require './lib/config.coffee'
-Template    = require './lib/Template.coffee'
+Config      = require './libraries/Config.coffee'
+Template    = require './libraries/Template.coffee'
 helloJquery = require './HelloJquery.coffee';
 helloWorld  = require '../common/HelloWorld.coffee';
 

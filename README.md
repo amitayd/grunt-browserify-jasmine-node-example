@@ -3,7 +3,7 @@ An example of how to set up a project for cross-developing for the browser and n
 
 Forked from [amitayd](https://github.com/amitayd/grunt-browserify-jasmine-node-example) and modified with the following:
 
-- CoffeeScript instead of vanilla JS
+- CoffeeScript instead of vanilla JS (coffeeify)
 - Environment based configuration (envify)
 - HTML templates with Handlebars (hbsfy)
 

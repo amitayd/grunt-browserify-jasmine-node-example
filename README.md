@@ -37,19 +37,22 @@ grunt watch
 
 ### Project structure
 ```
-- src          : application code
-  - browser    : browser only code
-  - common     : both for node.js and browser
-  - node       : node.js only code
+- src           : application code
+  - browser     : browser only code
+    - config    : configuration files
+    - libraries : custom libraries/utils
+    - templates : Handelbars templates
+  - common      : both for node.js and browser
+  - node        : node.js only code
 - test
-  - specs      : jasmine test specs
-    - browser  : run with jasmine browser only
-    - common   : run with jasmine + jasmine-node
-    - node     : ruh with jasmine-node only
-- resources    : resource files
-- vendor       : external libraries
-- dist         : build output
-GruntFile.js   : buld configuration
+  - specs       : jasmine test specs
+    - browser   : run with jasmine browser only
+    - common    : run with jasmine + jasmine-node
+    - node      : ruh with jasmine-node only
+- resources     : resource files
+- vendor        : external libraries
+- dist          : build output
+GruntFile.js    : buld configuration
 
 
 ```

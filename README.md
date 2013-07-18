@@ -1,4 +1,4 @@
-# cross-js-template
+# cross-js-template [![Build Status](https://travis-ci.org/Mulkave/cross-js-template.png?branch=master)](https://travis-ci.org/Mulkave/cross-js-template)
 An example of how to set up a project for cross-developing for the browser and node.js.
 
 Forked from [amitayd](https://github.com/amitayd/grunt-browserify-jasmine-node-example) and modified with the following:

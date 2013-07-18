@@ -2,12 +2,18 @@
   "name": "grunt-browserify-jasmine-node-example",
   "description": "An example of how to set up a project for cross-developing for the browser and node.js.",
   "version": "0.1.0",
-  "homepage": "https://github.com/amitayd/grunt-browserify-jasmine-node-example",
+  "homepage": "https://github.com/Mulkave/cross-js-template",
   "author": {
     "name": "Amitay Dobo",
     "email": "amitayd@gmail.com",
     "url": "http://doboism.com"
   },
+  "contributors": [
+    {
+      "name": "Abed Halawi",
+      "url": "https://github.com/Mulkave"
+    },
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/amitayd/grunt-browserify-jasmine-node-example.git"

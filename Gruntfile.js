@@ -51,7 +51,7 @@ module.exports = function (grunt) {
                     alias: ["./src/browser/App.coffee:SampleApp"],
                     externalize: ['src/common/**/*.coffee', 'src/browser/**/*.coffee'],
                     ignore: ['src/node/**/*.coffee'],
-                    transform: ['coffeeify', 'hbsfy', 'envify', 'brfs', 'hbsfy']
+                    transform: ['coffeeify', 'hbsfy', 'envify', 'brfs']
                 }
             },
             test: {
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                 dest: 'dist/test_bundle.js',
                 options: {
                     external: ['./src/**/*.js'],
-                    transform: ['coffeeify', 'hbsfy', 'envify']
+                    transform: ['coffeeify', 'hbsfy', 'envify', 'brfs']
                 }
             },
         },
@@ -93,5 +93,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'shell:jasmine_node', 'browserify', 'jasmine', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'browserify', 'jasmine', 'uglify']);
 };

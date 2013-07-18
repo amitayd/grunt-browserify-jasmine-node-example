@@ -46,7 +46,8 @@
     "brfs": "~0.0.6",
     "envify": "~0.0.1",
     "uglifyify": "~0.0.1",
-    "yamljs": "~0.1.4"
+    "yamljs": "~0.1.4",
+    "hbsfy": "~0.1.5"
   },
   "keywords": [
     "grunt",

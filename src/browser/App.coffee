@@ -1,6 +1,10 @@
-Config      = require './lib/Config.coffee'
+Config      = require './lib/config.coffee'
+Template    = require './lib/Template.coffee'
 helloJquery = require './HelloJquery.coffee';
 helloWorld  = require '../common/HelloWorld.coffee';
+
+# console.log Config.env # Check environment
+# console.log Template 'post', {title:'some title', body: 'hot one'}
 
 exports.main = ->
     element = helloJquery.hello()

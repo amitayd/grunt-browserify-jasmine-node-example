@@ -67,7 +67,7 @@ module.exports = function (grunt) {
             src : 'dist/app_bundle.js',
             options : {
                 specs : 'dist/test_bundle.js',
-                vendor : ['vendor/jquery-1.9.1.js', 'vendor/underscore.js']
+                vendor : ['vendor/jquery.js', 'vendor/underscore.js']
             }
         },
         uglify: {

@@ -23,16 +23,15 @@
     "grunt": "~0.4.1",
     "grunt-browserify": "~1.0.0",
     "jasmine-node": "~1.7.0",
-    "grunt-shell": "~0.2.2",
     "grunt-contrib-jasmine": "~0.4.2",
     "grunt-cli": "~0.1.8",
-
     "coffeeify": "~0.5.1",
     "brfs": "~0.0.6",
     "envify": "~0.0.1",
     "uglifyify": "~0.0.1",
     "yamljs": "~0.1.4",
-    "hbsfy": "~0.1.5"
+    "hbsfy": "~0.1.5",
+    "grunt-jasmine-node": "~0.1"
   },
   "keywords": [
     "grunt",

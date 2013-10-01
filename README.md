@@ -8,11 +8,10 @@ See further discussion at my [blog post](http://www.doboism.com/blog/2013/05/17/
 
 ## Getting Started
 
-Install node.js, and grunt-cli and jasmine-node globally.
+Install node.js, and grunt-cli globally.
 
 ```
 npm install -g grunt-cli
-npm install -g jasmine-node
 ```
 
 Clone/Download the repository, and from its directory, install the dependencies:
@@ -55,7 +54,7 @@ Tests can be run in 3 modes:
 
 1. Jasmine-node:
 
-    The only tests that are using the source code directly (i.e. pre build). They are run as part of the main build, or you can run `grunt shell:jasmine_node`
+    The only tests that are using the source code directly (i.e. pre build). They are run as part of the main build, or you can run `jasmine_node`
   
 2. Jasmine through automated PhantomJS browser
  
@@ -80,7 +79,6 @@ A client could load it in javascript using:
 You can see the application running at [test/AppRunner.html](test/AppRunner.html)
 
 ### Notes
- * Couldn't get any of the jasmine-node grunt plugins to run properly with 2 directories, so using the shell instead
  * underscore.js is packaged from the npm package to the built app_bundle. Alternatives would be packaging it in a different bundle, but as a browserified file, or loading it as an external script file, and using its global variable. This is currently (AFAIK) not supported in browserify, but can be achieved through a hack to the code. This is currently commented out in HelloWorld.js
  * Jquery is loaded as a window global and not as a module for require(). An alternative would be to use a jquery version which supports being exposed as a commonJS module, or using browserify-shim to wrap it so it could be used with a require().
 

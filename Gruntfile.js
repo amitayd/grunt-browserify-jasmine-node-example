@@ -18,15 +18,11 @@ module.exports = function (grunt) {
                 tasks: ['default']
             },
         },
-        shell: {
-            jasmine_node: {
-                command: 'jasmine-node test/spec/node/ test/spec/common/',
-                options: {
-                    stdout: true,
-                    stderr: true,
-                    failOnError: true,
-                }
-            }
+        jasmine_node: {
+            specNameMatcher: "Spec",
+            specFolders: ["test/spec/common"],
+            projectRoot: "test/spec/node",
+            forceExit: true,
         },
         jshint: {
             all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
@@ -89,7 +85,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-jasmine-node');
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'shell:jasmine_node', 'browserify', 'jasmine', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'jasmine_node', 'browserify', 'jasmine', 'uglify']);
 };

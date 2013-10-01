@@ -25,6 +25,11 @@ Clone/Download the repository, and from its directory, install the dependencies:
 npm install
 ```
 
+Set environment variable to run
+```bash
+export NODE_ENV=development
+```
+
 You are now ready to run the build and the tests:
 ```
 # build one time

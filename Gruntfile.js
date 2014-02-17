@@ -43,8 +43,12 @@ module.exports = function (grunt) {
                 src: ['src/common/**/*.js', 'src/browser/**/*.js'],
                 dest: 'dist/app_bundle.js',
                 options: {
-                    alias: ["./src/browser/App.js:SampleApp"],
-                    externalize: ['src/common/**/*.js', 'src/browser/**/*.js'],
+                    alias: ["./src/browser/App.js:SampleApp",],
+                    aliasMappings: [{
+                        cwd: 'src',
+                        src: ['common/**/*.js', "browser/**/*.js"],
+                        dest: 'lib',
+                      }, ],
                     ignore: ['src/node/**/*.js'],
                 }
             },

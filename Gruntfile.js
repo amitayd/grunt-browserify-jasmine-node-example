@@ -2,6 +2,18 @@
 
 module.exports = function (grunt) {
 
+    var expandFiles = function (glob) {
+        return grunt.file.expand({
+            filter: 'isFile'
+        }, glob);
+    };
+
+    var aliasFiles = function (glob) {
+        return expandFiles(glob).map(function (file) {
+            return file + ':' + file;
+        });
+    };
+
     // Project configuration.
     grunt.initConfig({
         // Metadata.
@@ -36,36 +48,29 @@ module.exports = function (grunt) {
                 dest: 'dist/app_bundle_main.js',
                 options: {
                     alias: ["./src/browser/App.js:SampleApp"],
-                    ignore: ['src/node/**/*.js'],
                 },
             },
             src: {
                 src: ['src/common/**/*.js', 'src/browser/**/*.js'],
                 dest: 'dist/app_bundle.js',
                 options: {
-                    alias: ["./src/browser/App.js:SampleApp",],
-                    aliasMappings: [{
-                        cwd: 'src',
-                        src: ['common/**/*.js', "browser/**/*.js"],
-                        dest: 'lib',
-                      }, ],
-                    ignore: ['src/node/**/*.js'],
+                    alias: aliasFiles('./src/common/**/*.js').concat(aliasFiles('./src/browser/**/*.js')),
                 }
             },
             test: {
                 src: ['test/spec/common/**/*.js', 'test/spec/browser/**/*.js'],
                 dest: 'dist/test_bundle.js',
                 options: {
-                    external: ['./src/**/*.js'],
+                    external: expandFiles('./src/**/*.js'),
                     ignore: ['./node_modules/underscore/underscore.js'],
                 }
             },
         },
-        jasmine : {
-            src : 'dist/app_bundle.js',
-            options : {
-                specs : 'dist/test_bundle.js',
-                vendor : ['libs/jquery-1.9.1.js', 'libs/underscore.js']
+        jasmine: {
+            src: 'dist/app_bundle.js',
+            options: {
+                specs: 'dist/test_bundle.js',
+                vendor: ['libs/jquery-1.9.1.js', 'libs/underscore.js']
             }
         },
         uglify: {

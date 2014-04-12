@@ -8,12 +8,6 @@ module.exports = function (grunt) {
         }, glob);
     };
 
-    var aliasFiles = function (glob) {
-        return expandFiles(glob).map(function (file) {
-            return file + ':' + file;
-        });
-    };
-
     // Project configuration.
     grunt.initConfig({
         // Metadata.
@@ -54,14 +48,14 @@ module.exports = function (grunt) {
                 src: ['src/common/**/*.js', 'src/browser/**/*.js'],
                 dest: 'dist/app_bundle.js',
                 options: {
-                    alias: aliasFiles('./src/common/**/*.js').concat(aliasFiles('./src/browser/**/*.js')),
+                    require: expandFiles('./src/common/**/*.js').concat(expandFiles('./src/browser/**/*.js')),
                 }
             },
             test: {
                 src: ['test/spec/common/**/*.js', 'test/spec/browser/**/*.js'],
                 dest: 'dist/test_bundle.js',
                 options: {
-                    external: expandFiles('./src/**/*.js'),
+                    external: ['src/**/*.js'],
                     ignore: ['./node_modules/underscore/underscore.js'],
                 }
             },

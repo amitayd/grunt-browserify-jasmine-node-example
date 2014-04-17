@@ -48,7 +48,9 @@ module.exports = function (grunt) {
                 src: ['src/common/**/*.js', 'src/browser/**/*.js'],
                 dest: 'dist/app_bundle.js',
                 options: {
-                    require: expandFiles('./src/common/**/*.js').concat(expandFiles('./src/browser/**/*.js')),
+                    require: expandFiles(
+                        ['./src/common/**/*.js',
+                        './src/browser/**/*.js'])
                 }
             },
             test: {
